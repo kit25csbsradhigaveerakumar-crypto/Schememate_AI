@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { Globe, Mic, Square } from "lucide-react";
 import { useServerFn } from "@tanstack/react-start";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -282,7 +283,9 @@ function Conversation() {
             onClick={() => setShowLangs(true)}
             className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground hover:text-foreground"
           >
-            🌐 {lang.native}
+            <span className="flex items-center gap-1.5">
+              <Globe className="size-3.5" /> {lang.native}
+            </span>
           </button>
           <Button size="sm" variant="ghost" asChild>
             <Link to="/dashboard">Dashboard</Link>
@@ -343,7 +346,7 @@ function Conversation() {
             )}
             aria-label={lang.ui.startSpeaking}
           >
-            {orb === "listening" ? "■" : "🎤"}
+            {orb === "listening" ? <Square className="size-4 fill-current" /> : <Mic className="size-5" />}
           </button>
           <input
             value={draft}
