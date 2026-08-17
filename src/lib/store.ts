@@ -23,13 +23,13 @@ export interface TrackedApplication {
   opportunity_id: string;
   opportunity_name: string;
   status: AppStatus;
-  reference_number?: string;
+  reference_number?: string | undefined;
   created_at: string;
   last_updated: string;
   next_action: string;
   completed_steps: number[];
   documents_done: string[];
-  deadline?: string;
+  deadline?: string | undefined;
   history: { status: AppStatus; at: string }[];
 }
 
