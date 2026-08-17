@@ -168,5 +168,5 @@ export const LANGUAGES: Language[] = [
 ];
 
 export function getLanguage(code: string): Language {
-  return LANGUAGES.find((l) => l.code === code) ?? LANGUAGES[1];
+  return LANGUAGES.find((l) => l.code === code) ?? LANGUAGES[1]!;
 }
